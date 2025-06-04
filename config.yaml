@@ -1,0 +1,30 @@
+# Configuration file for EUS KRAS prediction project
+
+data:
+  annotations_csv: "data/annotations.csv"  # CSV with columns: patient_id, image_path, kras_status (0 or 1)
+  image_dir: "data/images/"                # Directory containing EUS images
+  input_size: 224                          # input image size (square)
+  batch_size: 16
+  num_workers: 4
+
+model:
+  backbone: "resnet50"      # options: resnet50, efficientnet_b0, etc.
+  pretrained: true
+  num_classes: 2            # KRAS wild-type vs mutated
+  lr: 1e-4
+  weight_decay: 1e-4
+  scheduler: "ReduceLROnPlateau"  # options: CosineAnnealingLR, ReduceLROnPlateau
+  scheduler_params:
+    mode: "min"
+    factor: 0.5
+    patience: 3
+
+training:
+  device: "cuda"            # or "cpu"
+  epochs: 50
+  early_stopping_patience: 10
+  output_dir: "checkpoints/"
+
+evaluation:
+  output_dir: "results/"
+  gradcam: true
