@@ -2,6 +2,10 @@
 
 This repository implements a deep learning pipeline to predict KRAS mutation status in pancreatic adenocarcinoma from endoscopic ultrasound (EUS) images.
 By Avinoam Aharon Muller 
+
+This project aims to develop a deep learning model to predict KRAS mutation status (and other key mutations) in pancreatic cancer using Endoscopic Ultrasound (EUS) images. While there are existing methods for tumor detection and classification in EUS, none have focused on predicting mutations like KRAS purely from imaging data. KRAS mutations are crucial for determining prognosis and treatment options, and this non-invasive approach could provide valuable insights without the need for additional biopsies, potentially speeding up decision-making and optimizing treatment plans for patients. The innovation lies in leveraging EUS images to predict molecular mutations, a concept not yet explored in current research.
+
+
 avimuller1102@gmail.com
 
 ## Directory Structure
